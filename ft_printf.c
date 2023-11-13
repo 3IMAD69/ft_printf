@@ -6,47 +6,50 @@
 /*   By: idhaimy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 18:26:26 by idhaimy           #+#    #+#             */
-/*   Updated: 2023/11/11 19:40:13 by idhaimy          ###   ########.fr       */
+/*   Updated: 2023/11/13 15:58:32 by idhaimy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdarg.h>
-#include "libft/libft.h"
+#include "ft_printf.h"
+
 
 int ft_printf(const char *str, ...)
 {
     va_list args;
 
     va_start(args,str);
-    // printf("%d",va_arg(args,int));
-    // printf("%d",va_arg(args,int));
     while (*str)
-    {
+    {   
         if (*str == '%')
         {
             str++;
-            if (*str == 'd')
+            if (*str == 'd' || *str == 'i')
                 ft_putnbr_fd(va_arg(args,int),1);
             else if (*str == 'c')
                 ft_putchar_fd((char)va_arg(args,int),1);
             else if (*str == 's')
-                ft_putstr_fd(va_arg(args,char *),1);
+                ft_print_str(va_arg(args,char *));
+            else if (*str == 'p')
+                ft_print_pointer(va_arg(args,void *));
+            else if (*str == 'x' || *str == 'X')
+                ft_print_x(va_arg(args,unsigned int),*str);
+            else if (*str == 'u')
+                ft_print_u(va_arg(args,unsigned int));
+            else if (*str == '%')
+                ft_putchar_fd('%',1);
         }
         else
-        {
             ft_putchar_fd(*str,1);
-        }
         str++;
     }
-
-
+    return (0);
     va_end(args);
-    
 }
-
 
 int main()
 {
-    ft_printf("%dtesting%c",5,'s');
+    printf("a %% is dis\n");
+    ft_printf("a %% is dis\n");
+
 }
+//gcc -Wall -Wextra -Werror ft_printf.c libft/ft_putnbr_fd.c libft/ft_putchar_fd.c libft/ft_putstr_fd.c ft_print_str.c  && ./a.out
