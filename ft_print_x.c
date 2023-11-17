@@ -6,7 +6,7 @@
 /*   By: idhaimy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 20:02:26 by idhaimy           #+#    #+#             */
-/*   Updated: 2023/11/17 13:00:17 by idhaimy          ###   ########.fr       */
+/*   Updated: 2023/11/17 20:05:02 by idhaimy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int ft_print_x(unsigned int nb, char maj)
 		    final_number[size] = hex_base[(nb % 16)];
 		nb /= 16;
 	}
-	ft_putstr_fd(final_number, 1);
+	nb  = ft_putstr_fd(final_number, 1);
     free (final_number);
-	return (size);
+	return (nb);
 }

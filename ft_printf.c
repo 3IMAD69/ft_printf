@@ -6,7 +6,7 @@
 /*   By: idhaimy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 18:26:26 by idhaimy           #+#    #+#             */
-/*   Updated: 2023/11/17 12:46:49 by idhaimy          ###   ########.fr       */
+/*   Updated: 2023/11/17 20:50:25 by idhaimy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,8 @@ int ft_printf(const char *str, ...)
     va_end(args);
 }
 
-int main()
-{   
-    //printf("%5%");
-    int a = ft_printf("hexadecimal %d is %X",42,42);
-    printf("%d\n",a);
-}
+// int main()
+// {  
+//         int result = printf("Hello, %s!\n", "world");
+//         printf("%d",result);
+// }

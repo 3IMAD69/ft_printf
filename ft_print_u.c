@@ -6,7 +6,7 @@
 /*   By: idhaimy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 20:02:26 by idhaimy           #+#    #+#             */
-/*   Updated: 2023/11/17 12:59:25 by idhaimy          ###   ########.fr       */
+/*   Updated: 2023/11/17 20:07:12 by idhaimy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	ft_print_u(unsigned int nb)
 		final_number[size] = dec_base[(nb % 10)];
 		nb /= 10;
 	}
-	ft_putstr_fd(final_number, 1);
+	nb = ft_putstr_fd(final_number, 1);
 	free(final_number);
-	return (size);
+	return (nb);
 }
