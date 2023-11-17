@@ -6,7 +6,7 @@
 /*   By: idhaimy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 20:02:26 by idhaimy           #+#    #+#             */
-/*   Updated: 2023/11/13 15:34:52 by idhaimy          ###   ########.fr       */
+/*   Updated: 2023/11/17 12:59:25 by idhaimy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	get_size(unsigned int n)
 	return (size);
 }
 
-void	ft_print_u(unsigned int nb)
+int	ft_print_u(unsigned int nb)
 {
 	char	*dec_base;
 	char	*final_number;
@@ -33,14 +33,11 @@ void	ft_print_u(unsigned int nb)
 
 	dec_base = "0123456789";
 	if (nb == 0)
-	{
-		ft_putchar_fd('0', 1);
-		return ;
-	}
+		return (ft_putchar_fd('0', 1));
 	size = get_size(nb);
 	final_number = (char *)malloc(sizeof(char *) * size + 1);
 	if (!final_number)
-		return ;
+		return (0);
 	final_number[size] = '\0';
 	while (nb)
 	{
@@ -50,4 +47,5 @@ void	ft_print_u(unsigned int nb)
 	}
 	ft_putstr_fd(final_number, 1);
 	free(final_number);
+	return (size);
 }

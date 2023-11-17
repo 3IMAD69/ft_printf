@@ -1,14 +1,21 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-#include "libft/libft.h"
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdint.h>
 #include <stdlib.h>
+#include <unistd.h>
 
-void ft_print_str(char *s);
-void ft_print_pointer(void *p);
-void ft_print_x(unsigned int nb, char maj);
-void ft_print_u(unsigned int nb);
+int ft_print_str(char *s);
+int ft_print_pointer(void *p);
+int ft_print_x(unsigned int nb, char maj);
+int ft_print_u(unsigned int nb);
+int ft_printf(const char *str, ...);
+
+int	ft_putchar_fd(char c, int fd);
+int	ft_putnbr_fd(int n, int fd);
+int	ft_putstr_fd(char *s, int fd);
+size_t	ft_strlen(const char *s);
+
 #endif

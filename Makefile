@@ -1,5 +1,6 @@
 
-SRC		= ft_print_pointer.c ft_print_str.c ft_print_u.c ft_print_x.c ft_printf.c
+SRC		= ft_print_pointer.c ft_print_str.c ft_print_u.c ft_print_x.c ft_printf.c \
+			ft_putchar_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_strlen.c
 
 OBJ		= ${SRC:.c=.o}
 
@@ -25,4 +26,6 @@ fclean:		clean
 
 re:			fclean all
 
+a : 
+	@cc -Wall -Werror -Wextra ft_printf.c ft_print_pointer.c ft_print_str.c ft_print_u.c ft_print_x.c ft_putchar_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_strlen.c && ./a.out
 .PHONY: all bonus clean fclean re

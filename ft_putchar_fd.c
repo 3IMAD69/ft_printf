@@ -6,15 +6,15 @@
 /*   By: idhaimy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 15:58:16 by idhaimy           #+#    #+#             */
-/*   Updated: 2023/11/17 11:49:15 by idhaimy          ###   ########.fr       */
+/*   Updated: 2023/11/17 13:02:33 by idhaimy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_putchar_fd(char c, int fd)
 {
 	if (fd < 0)
-		return ;
-	write(fd, &c, 1);
+		return (0);
+	return (write(fd, &c, 1));
 }

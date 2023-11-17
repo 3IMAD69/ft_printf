@@ -6,16 +6,19 @@
 /*   By: idhaimy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 16:37:23 by idhaimy           #+#    #+#             */
-/*   Updated: 2023/11/17 11:49:23 by idhaimy          ###   ########.fr       */
+/*   Updated: 2023/11/17 13:02:26 by idhaimy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr_fd(int n, int fd)
+int	ft_putnbr_fd(int n, int fd)
 {
+	int printed;
+
+	printed = 0;
 	if (fd < 0)
-		return ;
+		return (0) ;
 	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
@@ -27,10 +30,12 @@ void	ft_putnbr_fd(int n, int fd)
 	else if (n <= 9)
 	{
 		ft_putchar_fd((n + '0'), fd);
+		printed++;
 	}
 	else
 	{
 		ft_putnbr_fd((n / 10), fd);
 		ft_putchar_fd((n % 10) + '0', fd);
 	}
+	return (printed);
 }

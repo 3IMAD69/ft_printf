@@ -6,7 +6,7 @@
 /*   By: idhaimy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 18:26:26 by idhaimy           #+#    #+#             */
-/*   Updated: 2023/11/17 11:23:55 by idhaimy          ###   ########.fr       */
+/*   Updated: 2023/11/17 12:46:49 by idhaimy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 int ft_printf(const char *str, ...)
 {
     va_list args;
+    int printed_chars = 0;
 
     va_start(args,str);
     while (*str)
@@ -24,32 +25,31 @@ int ft_printf(const char *str, ...)
         {
             str++;
             if (*str == 'd' || *str == 'i')
-                ft_putnbr_fd(va_arg(args,int),1);
+                printed_chars += ft_putnbr_fd(va_arg(args,int),1);
             else if (*str == 'c')
-                ft_putchar_fd((char)va_arg(args,int),1);
+                printed_chars += ft_putchar_fd((char)va_arg(args,int),1);
             else if (*str == 's')
-                ft_print_str(va_arg(args,char *));
+                printed_chars += ft_print_str(va_arg(args,char *));
             else if (*str == 'p')
-                ft_print_pointer(va_arg(args,void *));
+                printed_chars += ft_print_pointer(va_arg(args,void *));
             else if (*str == 'x' || *str == 'X')
-                ft_print_x(va_arg(args,unsigned int),*str);
+                printed_chars += ft_print_x(va_arg(args,unsigned int),*str);
             else if (*str == 'u')
-                ft_print_u(va_arg(args,unsigned int));
+                printed_chars += ft_print_u(va_arg(args,unsigned int));
             else if (*str == '%')
-                ft_putchar_fd('%',1);
+                printed_chars += ft_putchar_fd('%',1);
         }
         else
-            ft_putchar_fd(*str,1);
+            printed_chars += ft_putchar_fd(*str,1);
         str++;
     }
-    return (0);
+    return (printed_chars);
     va_end(args);
 }
 
 int main()
 {   
-    printf("a %% is dis\n");
-    ft_printf("a %% is dis\n");
-
+    //printf("%5%");
+    int a = ft_printf("hexadecimal %d is %X",42,42);
+    printf("%d\n",a);
 }
-//gcc -Wall -Wextra -Werror ft_printf.c libft/ft_putnbr_fd.c libft/ft_putchar_fd.c libft/ft_putstr_fd.c ft_print_str.c  && ./a.out
