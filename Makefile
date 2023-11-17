@@ -1,5 +1,28 @@
 
+SRC		= ft_print_pointer.c ft_print_str.c ft_print_u.c ft_print_x.c ft_printf.c
 
+OBJ		= ${SRC:.c=.o}
 
-all : 
-	@gcc -Wall -Wextra -Werror ft_printf.c libft/ft_putnbr_fd.c libft/ft_putchar_fd.c libft/ft_putstr_fd.c ft_print_str.c ft_print_pointer.c ft_print_x.c ft_print_u.c && ./a.out
+CFLAGS	= -Wall -Werror -Wextra
+CC		= cc
+NAME	= libftprintf.a
+
+all:		${NAME}
+
+${NAME}:	${OBJ}
+	ar rcs ${NAME} ${OBJ}
+
+bonus: 	${OBJB}
+
+%.o:		%.c
+	${CC} ${CFLAGS} -c $< -o $@
+	
+clean:
+	rm -f ${OBJ} ${OBJB}
+
+fclean:		clean
+	rm -f ${NAME}
+
+re:			fclean all
+
+.PHONY: all bonus clean fclean re

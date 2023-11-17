@@ -6,7 +6,7 @@
 /*   By: idhaimy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 18:26:26 by idhaimy           #+#    #+#             */
-/*   Updated: 2023/11/13 15:58:32 by idhaimy          ###   ########.fr       */
+/*   Updated: 2023/11/17 11:23:55 by idhaimy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int ft_printf(const char *str, ...)
 }
 
 int main()
-{
+{   
     printf("a %% is dis\n");
     ft_printf("a %% is dis\n");
 
