@@ -1,5 +1,5 @@
 
-SRC		= ft_print_pointer.c ft_print_str.c ft_print_u.c ft_print_x.c ft_printf.c \
+SRC		= ft_print_p.c ft_print_str.c ft_print_u.c ft_print_x.c ft_printf.c \
 			ft_putchar_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_strlen.c
 
 OBJ		= ${SRC:.c=.o}

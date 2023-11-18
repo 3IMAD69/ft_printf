@@ -8,7 +8,7 @@
 #include <unistd.h>
 
 int ft_print_str(char *s);
-int ft_print_pointer(void *p);
+int ft_print_p(void *p);
 int ft_print_x(unsigned int nb, char maj);
 int ft_print_u(unsigned int nb);
 int ft_printf(const char *str, ...);

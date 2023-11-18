@@ -6,7 +6,7 @@
 /*   By: idhaimy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 18:26:26 by idhaimy           #+#    #+#             */
-/*   Updated: 2023/11/18 19:58:22 by idhaimy          ###   ########.fr       */
+/*   Updated: 2023/11/18 21:06:23 by idhaimy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int ft_printf(const char *str, ...)
             else if (*str == 's')
                 result = ft_print_str(va_arg(args,char *));
             else if (*str == 'p')
-                result = ft_print_pointer(va_arg(args,void *));
+                result = ft_print_p(va_arg(args,void *));
             else if (*str == 'x' || *str == 'X')
                 result = ft_print_x(va_arg(args,unsigned int),*str);
             else if (*str == 'u')

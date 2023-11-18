@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_pointer.c                                 :+:      :+:    :+:   */
+/*   ft_print_p.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idhaimy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:24:00 by idhaimy           #+#    #+#             */
-/*   Updated: 2023/11/18 19:09:59 by idhaimy          ###   ########.fr       */
+/*   Updated: 2023/11/18 21:07:47 by idhaimy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	get_size(uintptr_t n)
 	return (size);
 }
 
-int	ft_print_pointer(void *p)
+int	ft_print_p(void *p)
 {
 	uintptr_t	p_value;
 	char		*hex_base;
