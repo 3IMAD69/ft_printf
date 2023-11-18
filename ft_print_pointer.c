@@ -6,7 +6,7 @@
 /*   By: idhaimy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:24:00 by idhaimy           #+#    #+#             */
-/*   Updated: 2023/11/17 16:34:52 by idhaimy          ###   ########.fr       */
+/*   Updated: 2023/11/18 19:09:59 by idhaimy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,12 @@ int	ft_print_pointer(void *p)
 	p_value = (uintptr_t)p;
 	if (!p_value)
 		return (ft_putstr_fd("0x0", 1));
-	write(1, "0x", 2);
+	if (write(1, "0x", 2) == -1)
+		return (-1);
 	size = get_size(p_value);
 	final_number = (char *)malloc(sizeof(char *) * size + 1);
 	if (!final_number)
-		return (0);
+		return (-1);
 	final_number[size] = '\0';
 	while (p_value)
 	{
@@ -48,7 +49,11 @@ int	ft_print_pointer(void *p)
 		final_number[size] = hex_base[(p_value % 16)];
 		p_value /= 16;
 	}
-	ft_putstr_fd(final_number, 1);
+	if (ft_putstr_fd(final_number, 1) == -1)
+	{
+	    free (final_number);
+		return (-1);
+	}
     free (final_number);
 	return (get_size((uintptr_t)p) + 2);
 }

@@ -6,7 +6,7 @@
 /*   By: idhaimy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 19:52:17 by idhaimy           #+#    #+#             */
-/*   Updated: 2023/11/17 13:02:09 by idhaimy          ###   ########.fr       */
+/*   Updated: 2023/11/18 18:57:04 by idhaimy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,7 @@
 int ft_print_str(char *s)
 {
     if (!s)
-    {
-        ft_putstr_fd("(null)",1);
-        return (6);
-    }
+        return (ft_putstr_fd("(null)",1));
     else
         return (ft_putstr_fd(s,1));
 }

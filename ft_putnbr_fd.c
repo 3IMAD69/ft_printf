@@ -6,35 +6,44 @@
 /*   By: idhaimy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 16:37:23 by idhaimy           #+#    #+#             */
-/*   Updated: 2023/11/17 19:37:38 by idhaimy          ###   ########.fr       */
+/*   Updated: 2023/11/18 20:02:49 by idhaimy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr_fd(int n, int fd)
+int	ft_putnbr_fd(long nb, int fd)
 {
-	int printed;
+	int printed_chars;
+	long divisor;
 
-	printed = 0;
-	if (fd < 0)
-		return (0) ;
-	if (n < 0)
+	divisor = 1;
+	printed_chars = 0;
+	if (nb < 0)
 	{
-		if (n == -2147483648)
-			return (ft_putstr_fd("-2147483648", fd));
-		else
-		{
-			printed += ft_putchar_fd('-', fd);
-			printed += ft_putnbr_fd(-n, fd);
-		}
+		if (ft_putchar_fd('-',fd) == -1)
+			return (-1);
+		printed_chars++;
+		nb = -nb;
 	}
-	else if (n <= 9)
-		printed += ft_putchar_fd((n + '0'), fd);
-	else
+	while (nb / divisor >= 10)
+		divisor *= 10;
+	while (divisor > 0)
 	{
-		printed += ft_putnbr_fd((n / 10), fd);
-		printed += ft_putchar_fd((n % 10) + '0', fd);
+		if (ft_putchar_fd((nb / divisor) + '0',1) == -1)
+			return (-1);
+		printed_chars++;
+		nb %= divisor;
+		divisor /= 10;
 	}
-	return (printed);
+	return (printed_chars);
 }
+
+// int main()
+// {
+// 	int printedft = ft_putnbr_fd(-10,1);
+// 	int realprinted = printf("%d",-10);
+// 	printf("\n");
+// 	printf("Fake = %d\n",printedft);
+// 	printf("Real = %d\n",realprinted);
+// }

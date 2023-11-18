@@ -6,7 +6,7 @@
 /*   By: idhaimy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 16:07:19 by idhaimy           #+#    #+#             */
-/*   Updated: 2023/11/17 16:28:06 by idhaimy          ###   ########.fr       */
+/*   Updated: 2023/11/18 11:45:10 by idhaimy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ int	ft_putstr_fd(char *s, int fd)
 	if (fd < 0 || !s)
 		return (0);
 	while (*s)
-		printed += ft_putchar_fd(*s++, fd);
+	{
+		if (ft_putchar_fd(*s++, fd) == -1)
+			return (-1);
+		else 
+			printed++;
+	}
 	return (printed++);
 }
