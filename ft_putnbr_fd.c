@@ -6,7 +6,7 @@
 /*   By: idhaimy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 16:37:23 by idhaimy           #+#    #+#             */
-/*   Updated: 2023/11/18 20:52:55 by idhaimy          ###   ########.fr       */
+/*   Updated: 2023/11/19 12:28:22 by idhaimy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,3 @@ int	ft_putnbr_fd(long nb, int fd)
 	}
 	return (printed_chars);
 }
-
-// int main()
-// {
-// 	int printedft = ft_putnbr_fd(-10,1);
-// 	int realprinted = printf("%d",-10);
-// 	printf("\n");
-// 	printf("Fake = %d\n",printedft);
-// 	printf("Real = %d\n",realprinted);
-// }
