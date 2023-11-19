@@ -6,7 +6,7 @@
 /*   By: idhaimy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 20:02:26 by idhaimy           #+#    #+#             */
-/*   Updated: 2023/11/19 12:16:13 by idhaimy          ###   ########.fr       */
+/*   Updated: 2023/11/19 13:29:25 by idhaimy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ static size_t	get_size(unsigned int n)
 	}
 	return (size);
 }
+
 static void	write_to_result(char *final_number, unsigned int nb, size_t size,
 		char maj)
 {
@@ -41,6 +42,7 @@ static void	write_to_result(char *final_number, unsigned int nb, size_t size,
 		nb /= 16;
 	}
 }
+
 int	ft_print_x(unsigned int nb, char maj)
 {
 	char	*final_number;

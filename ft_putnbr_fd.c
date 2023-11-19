@@ -6,7 +6,7 @@
 /*   By: idhaimy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 16:37:23 by idhaimy           #+#    #+#             */
-/*   Updated: 2023/11/19 12:28:22 by idhaimy          ###   ########.fr       */
+/*   Updated: 2023/11/19 13:27:35 by idhaimy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 int	ft_putnbr_fd(long nb, int fd)
 {
-	int printed_chars;
-	long divisor;
+	int		printed_chars;
+	long	divisor;
 
 	divisor = 1;
 	printed_chars = 0;
 	if (nb < 0)
 	{
-		if (ft_putchar_fd('-',fd) == -1)
+		if (ft_putchar_fd('-', fd) == -1)
 			return (-1);
 		printed_chars++;
 		nb = -nb;
@@ -30,7 +30,7 @@ int	ft_putnbr_fd(long nb, int fd)
 		divisor *= 10;
 	while (divisor > 0)
 	{
-		if (ft_putchar_fd((nb / divisor) + '0',1) == -1)
+		if (ft_putchar_fd((nb / divisor) + '0', 1) == -1)
 			return (-1);
 		printed_chars++;
 		nb %= divisor;

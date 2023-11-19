@@ -6,7 +6,7 @@
 /*   By: idhaimy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 16:07:19 by idhaimy           #+#    #+#             */
-/*   Updated: 2023/11/18 11:45:10 by idhaimy          ###   ########.fr       */
+/*   Updated: 2023/11/19 13:27:38 by idhaimy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_putstr_fd(char *s, int fd)
 {
-	int printed;
+	int	printed;
 
 	printed = 0;
 	if (fd < 0 || !s)
@@ -23,7 +23,7 @@ int	ft_putstr_fd(char *s, int fd)
 	{
 		if (ft_putchar_fd(*s++, fd) == -1)
 			return (-1);
-		else 
+		else
 			printed++;
 	}
 	return (printed++);

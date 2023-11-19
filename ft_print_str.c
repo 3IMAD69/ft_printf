@@ -6,17 +6,16 @@
 /*   By: idhaimy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 19:52:17 by idhaimy           #+#    #+#             */
-/*   Updated: 2023/11/19 12:28:10 by idhaimy          ###   ########.fr       */
+/*   Updated: 2023/11/19 13:27:17 by idhaimy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "ft_printf.h"
 
-int ft_print_str(char *s)
+int	ft_print_str(char *s)
 {
-    if (!s)
-        return (ft_putstr_fd("(null)",1));
-    else
-        return (ft_putstr_fd(s,1));
+	if (!s)
+		return (ft_putstr_fd("(null)", 1));
+	else
+		return (ft_putstr_fd(s, 1));
 }
