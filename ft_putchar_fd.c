@@ -6,7 +6,7 @@
 /*   By: idhaimy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 15:58:16 by idhaimy           #+#    #+#             */
-/*   Updated: 2023/11/19 12:08:56 by idhaimy          ###   ########.fr       */
+/*   Updated: 2023/11/19 20:58:24 by idhaimy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 int	ft_putchar_fd(char c, int fd)
 {
 	if (fd < 0)
-		return (0);
+		return (-1);
 	return (write(1, &c, 1));
 }

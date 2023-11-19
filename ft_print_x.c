@@ -6,7 +6,7 @@
 /*   By: idhaimy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 20:02:26 by idhaimy           #+#    #+#             */
-/*   Updated: 2023/11/19 13:29:25 by idhaimy          ###   ########.fr       */
+/*   Updated: 2023/11/19 20:21:51 by idhaimy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,5 @@ int	ft_print_x(unsigned int nb, char maj)
 	write_to_result(final_number, nb, size, maj);
 	result = ft_putstr_fd(final_number, 1);
 	free(final_number);
-	if (result == -1)
-		return (-1);
 	return (result);
 }

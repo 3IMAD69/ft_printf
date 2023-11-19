@@ -6,7 +6,7 @@
 /*   By: idhaimy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 18:26:26 by idhaimy           #+#    #+#             */
-/*   Updated: 2023/11/19 13:29:43 by idhaimy          ###   ########.fr       */
+/*   Updated: 2023/11/19 21:57:20 by idhaimy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ static int	handle_print_error(int result, va_list args, int *printed_chars)
 
 void	input_checker(const char *str, va_list args, int *result)
 {
+
 	if (*str == 'd' || *str == 'i')
 		*result = ft_putnbr_fd(va_arg(args, int), 1);
 	else if (*str == 'c')
@@ -39,6 +40,8 @@ void	input_checker(const char *str, va_list args, int *result)
 		*result = ft_print_u(va_arg(args, unsigned int));
 	else if (*str == '%')
 		*result = ft_putchar_fd('%', 1);
+	else if (*str != '\0')
+		 *result = ft_putchar_fd(*str, 1);
 }
 
 int	ft_printf(const char *str, ...)
@@ -52,7 +55,7 @@ int	ft_printf(const char *str, ...)
 	va_start(args, str);
 	while (*str)
 	{
-		if (*str == '%' && (str++))
+		if (*str == '%'  && (str++))
 		{
 			input_checker(str, args, &result);
 			if (handle_print_error(result, args, &printed_chars) == -1)
@@ -69,3 +72,14 @@ int	ft_printf(const char *str, ...)
 	va_end(args);
 	return (printed_chars);
 }
+
+
+// int main()
+// {
+// 	char *str = "%d====%b===%";
+// 	int real = printf(str,42);
+// 	printf("\n");
+// 	int fake = ft_printf(str,42);
+
+// 	printf("\nReal = %d\nFake = %d",real,fake);
+// }
