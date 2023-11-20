@@ -6,7 +6,7 @@
 /*   By: idhaimy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 18:26:26 by idhaimy           #+#    #+#             */
-/*   Updated: 2023/11/20 10:36:53 by idhaimy          ###   ########.fr       */
+/*   Updated: 2023/11/20 12:04:38 by idhaimy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	handle_print_error(int result, va_list args, int *printed_chars)
 	return (0);
 }
 
-void	input_checker(const char *str, va_list args, int *result)
+static void	input_checker(const char *str, va_list args, int *result)
 {
 	if (*str == 'd' || *str == 'i')
 		*result = ft_putnbr_fd(va_arg(args, int), 1);

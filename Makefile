@@ -13,8 +13,6 @@ all:		${NAME}
 ${NAME}:	${OBJ}
 	ar rcs ${NAME} ${OBJ}
 
-bonus: 	${OBJB}
-
 %.o:		%.c
 	${CC} ${CFLAGS} -c $< -o $@
 	
@@ -26,4 +24,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY: all bonus clean fclean re
+.PHONY: all clean fclean re
