@@ -6,7 +6,7 @@
 /*   By: idhaimy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 13:30:48 by idhaimy           #+#    #+#             */
-/*   Updated: 2023/11/19 13:30:52 by idhaimy          ###   ########.fr       */
+/*   Updated: 2023/11/20 12:21:35 by idhaimy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
-# include <stdint.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
