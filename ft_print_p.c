@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-static size_t	get_size(uintptr_t n)
+static size_t	get_size(size_t n)
 {
 	int	size;
 
@@ -25,7 +25,7 @@ static size_t	get_size(uintptr_t n)
 	return (size);
 }
 
-static void	write_to_result(uintptr_t p_value, char *final_number, size_t size)
+static void	write_to_result(size_t p_value, char *final_number, size_t size)
 {
 	char	*hex_base;
 
@@ -41,19 +41,17 @@ static void	write_to_result(uintptr_t p_value, char *final_number, size_t size)
 
 int	ft_print_p(void *p)
 {
-	uintptr_t	p_value;
-	char		*hex_base;
+	size_t	p_value;
 	char		*final_number;
 	size_t		size;
 
-	hex_base = "0123456789abcdef";
-	p_value = (uintptr_t)p;
+	p_value = (size_t)p;
 	if (!p_value)
 		return (ft_putstr_fd("0x0", 1));
 	if (write(1, "0x", 2) == -1)
 		return (-1);
 	size = get_size(p_value);
-	final_number = (char *)malloc(sizeof(char *) * size + 1);
+	final_number = (char *)malloc(sizeof(char) * size + 1);
 	if (!final_number)
 		return (-1);
 	write_to_result(p_value, final_number, size);
@@ -63,5 +61,5 @@ int	ft_print_p(void *p)
 		return (-1);
 	}
 	free(final_number);
-	return (get_size((uintptr_t)p) + 2);
+	return (get_size((size_t)p) + 2);
 }
